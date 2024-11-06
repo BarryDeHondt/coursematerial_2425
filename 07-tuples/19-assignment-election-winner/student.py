@@ -1,9 +1,56 @@
 def election_winner(votes):
+    if not votes:
+        return None
     
-    common_element = ''
+    stemmen = {}
     
-    for vote in range(len(sorted(votes))):
+    for stem in votes:
+        if stem in stemmen:
+            stemmen[stem] += 1
+        else:
+            stemmen[stem] = 1
+    winnaar = max(stemmen, key=stemmen.get)
+    return winnaar
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
-        if votes[vote] == votes[vote] + 1:
-            common_element.insert(vote)
-    return common_element
